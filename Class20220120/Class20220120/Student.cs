@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Class20220120
 {
-    class Program
+    class Student
     {
-        static void Main(string[] args)
-        {
-            /*
+        /*
              - Create a class "Student" that contains few student properties like (Name, Birthdate, Nationality) and 2 different constructors, one that takes only the name and another one that takes all the fields
              创建一个“学生”类，其中包含一些学生属性，如（姓名、出生日期、国籍）和 2 个不同的构造函数，一个只取名字，另一个取所有字段
              
@@ -27,53 +25,40 @@ namespace Class20220120
              还要在 Student 类中编写一个函数 PrintAllCourses
              - Change the Student class so the student can only have 15 credits of courses at the same time
              更改学生班级，使学生同时只能拥有15个学分的课程
-             */
-            Student student1 = new Student();
-            Student student2 = new Student("Tom",20220120,"Canada");
+         */
+        public string Name;
+        public string Nationality;
+        public DateTime Birthdate;
+        public List<Course> Courses;//课程
+        
+        public Student(string name)
+        {
+            this.Name = name;
+        }
+
+        public Student(string name, DateTime birthdate, string nationality)
+        {
+            this.Name = name;
+            this.Nationality = nationality;
+            this.Birthdate = birthdate;
+        }
+
+        public void JoinCourse(Course courseToJoin)
+        {
 
         }
     }
-    //public class Student
-    //{
-    //    public string Name;
-    //    public DateTime Birthdate;
-    //    public string Nationality;
+    class Course
+    {
+        public string Name;
+        public int Duration;//持续时间（以月为单位
+        public int NumOfCredits;//学生得分
 
-    //    public string Courses;
-
-    //    public Student()
-    //    {
-
-    //    }
-
-    //    public Student(string name, DateTime birthdate, string nationality)
-    //    {
-    //        Name = name;
-    //        Birthdate = birthdate;
-    //        Nationality = nationality;
-    //    }
-
-    //    public void JoinCourse()
-    //    {
-
-    //    }
-
-    //    public void LeaveCourse()
-    //    {
-
-    //    }
-
-    //    public void PrintAllCourses()
-    //    {
-
-    //    }
-
-    //}
-
-    //public class Course
-    //{
-    //    public string Name;
-    //    public string Duration;
-    //    public int Credits;
-    //}
+        public Course(string name, int duration, int numOfCredits)
+        {
+            this.Name = name;
+            this.Duration = duration;
+            this.NumOfCredits = numOfCredits;
+        }
+    }
 }
