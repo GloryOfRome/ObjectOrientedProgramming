@@ -29,7 +29,7 @@ namespace Class20220120
         public string Name;
         public string Nationality;
         public DateTime Birthdate;
-        public List<Course> Courses;//课程
+        public List<Course> Courses = new List<Course>();//课程
         
         public Student(string name)
         {
@@ -45,7 +45,16 @@ namespace Class20220120
 
         public void JoinCourse(Course courseToJoin)
         {
-
+            if (!this.Courses.Contains(courseToJoin))
+            {
+                if(num)
+                this.Courses.Add(courseToJoin);
+            }
+            else
+            {
+                Console.WriteLine("你已经报过此门功课");
+            }
+            
         }
     }
     class Course
