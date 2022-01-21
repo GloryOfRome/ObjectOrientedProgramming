@@ -29,11 +29,14 @@ namespace Class20220120
         public string Name;
         public string Nationality;
         public DateTime Birthdate;
-        public List<Course> Courses = new List<Course>();//课程
-        
+        public List<Course> Courses = new List<Course>();//将报名的课程存入
+        public int NumOfEnrolledCredits;//注册学分数
+
+
         public Student(string name)
         {
             this.Name = name;
+            NumOfEnrolledCredits = 0;
         }
 
         public Student(string name, DateTime birthdate, string nationality)
@@ -41,20 +44,44 @@ namespace Class20220120
             this.Name = name;
             this.Nationality = nationality;
             this.Birthdate = birthdate;
+            NumOfEnrolledCredits = 0;
+
         }
 
         public void JoinCourse(Course courseToJoin)
         {
             if (!this.Courses.Contains(courseToJoin))
             {
-                if(num)
-                this.Courses.Add(courseToJoin);
+                if (NumOfEnrolledCredits + courseToJoin.NumOfCredits <= 15)
+                {
+                    this.Courses.Add(courseToJoin);
+                    this.NumOfEnrolledCredits += courseToJoin.NumOfCredits;
+                }
+                else
+                    Console.WriteLine("You already reached the max allowed num of credits");//你已经达到了允许的最大积分数
+            }
+            else
+                Console.WriteLine("You are already enrolled in this course");
+        }
+
+        public void LeaveCourse(Course courseToLeave)//删除这门课程
+        {
+            if (this.Courses.Contains(courseToLeave))
+            {
+                this.Courses.Remove(courseToLeave);
+                this.NumOfEnrolledCredits -= courseToLeave.NumOfCredits;
             }
             else
             {
-                Console.WriteLine("你已经报过此门功课");
+                Console.WriteLine("ERROR....You are not enrolled in this course");//错误……你没有选修这门课
             }
-            
+        }
+
+        public void PrintCourses()
+        {
+            Console.WriteLine($"Courses of student {this.Name}");
+            foreach(var course in this.Courses)
+                Console.WriteLine(course.Name);
         }
     }
     class Course
@@ -67,7 +94,7 @@ namespace Class20220120
         {
             this.Name = name;
             this.Duration = duration;
-            this.NumOfCredits = numOfCredits;
+            this.NumOfCredits = numOfCredits;//学分的数量
         }
     }
 }
