@@ -30,8 +30,11 @@ namespace Class20220120
         public string Nationality;
         public DateTime Birthdate;
         public List<Course> Courses = new List<Course>();//将报名的课程存入
+        public List<Course> DroppedOutCourses = new List<Course>();//退出课程
+
         public int NumOfEnrolledCredits;//注册学分数
 
+        public int NumOfStudentInSystem;//系统内学生人数
 
         public Student(string name)
         {
@@ -62,6 +65,7 @@ namespace Class20220120
             }
             else
                 Console.WriteLine("You are already enrolled in this course");
+            
         }
 
         public void LeaveCourse(Course courseToLeave)//删除这门课程
@@ -83,18 +87,33 @@ namespace Class20220120
             foreach(var course in this.Courses)
                 Console.WriteLine(course.Name);
         }
+
+        
     }
     class Course
     {
         public string Name;
         public int Duration;//持续时间（以月为单位
         public int NumOfCredits;//学生得分
+        public int MaxCapacity;
+        public Queue<string> WaitingList = new Queue<string>();
 
         public Course(string name, int duration, int numOfCredits)
         {
             this.Name = name;
             this.Duration = duration;
             this.NumOfCredits = numOfCredits;//学分的数量
+            MaxCapacity = 0;
+        }
+
+        public void NotRegisterAgain(Student name)
+        {
+            if (this.MaxCapacity >= 15)
+            {
+                WaitingList.Enqueue(name);
+            }
+            if (this.MaxCapacity < 15)
+                string someOne = WaitingList.Dequeue();
         }
     }
 }
