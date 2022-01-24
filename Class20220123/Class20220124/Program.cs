@@ -34,7 +34,7 @@ namespace Class20220124
             dict.Add(3, 10);
             int valueInDictionary;
             dict.TryGetValue(3, out valueInDictionary);
-            Console.WriteLine(dict.TryGetValue(3, out valueInDictionary));
+            Console.WriteLine(dict.TryGetValue(3, out valueInDictionary));//dict.TryGetValue返回一个bool值
             Console.WriteLine(valueInDictionary);
             dict.TryGetValue(2, out valueInDictionary);
             Console.WriteLine(dict.TryGetValue(2, out valueInDictionary));
