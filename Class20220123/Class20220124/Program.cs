@@ -13,7 +13,7 @@ namespace Class20220124
 
             int num = 100;
             Console.WriteLine(num);
-            ChangeMyNumber(num);
+            ChangeMyNumber(ref num);//ref例子
             Console.WriteLine($"after:{num}");
             Console.WriteLine("-------------------");
 
@@ -28,9 +28,23 @@ namespace Class20220124
             Console.WriteLine(name);
             ChangeMyString(name);
             Console.WriteLine($"after:{name}");
+            Console.WriteLine("-------------------");
+
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+            dict.Add(3, 10);
+            int valueInDictionary;
+            dict.TryGetValue(3, out valueInDictionary);
+            Console.WriteLine(dict.TryGetValue(3, out valueInDictionary));
+            Console.WriteLine(valueInDictionary);
+            dict.TryGetValue(2, out valueInDictionary);
+            Console.WriteLine(dict.TryGetValue(2, out valueInDictionary));
+            Console.WriteLine(valueInDictionary);
+
+
+
 
         }
-        public static void ChangeMyNumber(int num)
+        public static void ChangeMyNumber(ref int num)//加与不加，结果大不相同
         {
             num = 200;
             Console.WriteLine($"method:{num}");
