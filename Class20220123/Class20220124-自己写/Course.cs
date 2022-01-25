@@ -16,12 +16,16 @@ namespace Class20220124_自己写
         public string Name;
         public int Duration;
         public int NumberOfCredits;
+        public int MaxCapacity;
+        public List<Student> Students = new List<Student>();
+        public Queue<Student> WatingQueue = new Queue<Student>();
 
-        public Course(string name, int duration, int numberOfCredits)
+        public Course(string name, int duration, int numberOfCredits, int maxCapacity)
         {
             this.Name = name;
             this.Duration = duration;
             this.NumberOfCredits = numberOfCredits;
+            this.MaxCapacity = maxCapacity;
         }
     }
 }
