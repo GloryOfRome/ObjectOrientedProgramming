@@ -16,7 +16,8 @@ namespace Class20220124_自己写
         public string Name;
         public int Duration;
         public int NumberOfCredits;
-        public int MaxCapacity;
+        public int MaxCapacity;//最大容量
+        public static int EnrolledNum;//报名人数
         public List<Student> Students = new List<Student>();
         public Queue<Student> WatingQueue = new Queue<Student>();
 
