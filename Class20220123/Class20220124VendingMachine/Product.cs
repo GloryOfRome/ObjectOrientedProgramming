@@ -14,15 +14,15 @@ namespace Class20220124VendingMachine
          */
 
         public string Name;
-        public int Price;
-        public int Code;
+        public float Price;
+        public string Code;
 
         public Product()
         {
             
         }
 
-        public Product(string name, int price, int code)
+        public Product(string name, int price, string code)
         {
             this.Name = name;
             this.Price = price;
