@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Class20220125
+namespace SimpleCarDealership
 {
-    class Store//Database where we have everything数据库中有我们所有的东西
+    internal class Store // Database where we have everything
     {
         public string Name;
         public string Address;
@@ -15,32 +15,32 @@ namespace Class20220125
 
         public List<Car> AllCars;
         public List<Customer> AllCustomer;
-
         public Store(string name)
         {
-            this.Name = name;
+            Name = name;
             AllCars = new List<Car>();
             AllCustomer = new List<Customer>();
         }
 
-        public void SellCar(Car car,Customer customer)
+        public void SellCar(Car car, Customer customer)
         {
-            if (car.IsSold)
+            if(car.IsSold)
             {
-                Console.WriteLine("The car is already sold");
+                Console.WriteLine("The Car is already sold");
                 return;
             }
             car.IsSold = true;
-            car.TimeOfSale = DateTime.Now;//表示“现在”已经卖掉了
-            car.customer = customer;
-        }
+            car.TimeOfSale = DateTime.Now;
+            //car.CustomerId = customer.Id;
+            car.Customer = customer;
 
-        public List<Car> GerAllSoldCars()//得到所有已售汽车信息
+        }
+        public List<Car> GetAllSoldCars()
         {
             List<Car> result = new List<Car>();
             foreach(var car in AllCars)
             {
-                if (car.IsSold)
+                if(car.IsSold)
                     result.Add(car);
             }
             return result;

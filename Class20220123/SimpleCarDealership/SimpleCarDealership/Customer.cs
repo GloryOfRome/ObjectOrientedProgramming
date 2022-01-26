@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Class20220125
+namespace SimpleCarDealership
 {
-    class Customer
+    internal class Customer
     {
         public int Id;
         public string Name;
@@ -14,16 +14,17 @@ namespace Class20220125
         public string PhoneNumber;
         public string Email;
 
-        //Navigation property(not part of the database) 导航属性(不是数据库的一部分)
-        public List<Car> car;
+        //Navigation property (not part of the database)
+        public List<Car> Car;
+        
 
         public bool VIP;
-        public int CreditScore;//信用评分
+        public int CreditScore;
 
-        public Customer(string name,string email)
+        public Customer(string name, string email)
         {
-            this.Name = name;
-            this.Email = email;
+            Name = name;
+            Email = email;
         }
     }
 }
