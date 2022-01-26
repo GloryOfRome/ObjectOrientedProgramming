@@ -18,15 +18,40 @@ namespace Class20220124_自己写
          - The course with the max number of students- 学生人数最多的课程
          - The course with max number of dropouts- 辍学人数最多的课程
          */
-        public List<Course> ListOfAllCourses = new List<Course>();
-        public List<Student> ListOfAllStudent = new List<Student>();
-        public void GetALsitOfAllFullCourses()
+        public string Name;
+        public List<Course> AllCourses;
+        public List<Student> AllStudent;
+
+        public Institute(string name)
+        {
+            this.Name = name;
+            AllCourses = new List<Course>();
+            AllStudent = new List<Student>();
+        }
+        public void GetALsitOfAllFullCourses()//获取所有报名人数已经满了的课程的列表
         {
             List<Course> fullCourseList = new List<Course>();
-            foreach(var course in fullCourseList)
+            foreach(var course in AllCourses)
             {
-                if(course.)
+                if (course.EnrolledStudent.Count == course.MaxCapacity)
+                    fullCourseList.Add(course);
             }
+        }
+
+        public List<Student> GetALsitOfAllStudentWithMaxAllowedCredits()//获取所有具有最大允许学分的学生的列表
+        {
+            List<Student> maxAllowedCreditsStudentList = new List<Student>();
+            foreach (var student in AllStudent)
+            {
+                if (student.NumOfEnrolledCredit() == Student.MAX_ALLOW_CREDIT)
+                    maxAllowedCreditsStudentList.Add(student);
+            }
+            return maxAllowedCreditsStudentList;
+        }
+
+        public List<Student> ListAllStudentsInThreeWaitlists()
+        {
+            //循环所有学生在waitinglist
         }
     }
 }

@@ -1,0 +1,31 @@
+
+## Properties
+Create a class, VendingMachine, which tracks its own money float and item inventory. It should have properties:
+
+ int SerialNumber, a unique ID for the machine itself
+
+Dictionary<float, int> MoneyFloat, a dictionary which tracks the quantities of various money pieces that the machine possesses.
+
+Dictionary<Product, int> Inventory which tracks how many of each product the machine possesses.
+
+The constructor should initialize the dictionary properties, and provide it a serial number.
+
+Create another class, Product, which consists of Name, Price, and Code properties. It should have an appropriate constructor.
+
+Methods (VendingMachine)
+
+StockItem(Product product, int Quantity) adds a product to the vending machine’s product inventory, including new items or items already in inventory. It should return a string confirming the product name, code, price, and new quantity.
+
+StockFloat(float MoneyDenomination, int Quantity) adds money pieces of the given denomination to the machine’s change float. It should return a string confirming the entire stock of the float.
+For example, StockFloat(1, 10) adds ten $1 coins to the machine’s change float. It then returns a string listing all of the amounts of money in the float inventory.
+
+
+VendItem(string Code, List<float> Money) provides a product code to the machine and a list of money pieces provided. 
+It finds that product with the code given in the machine’s product inventory, ensures that it is in stock, and then ensures that the money provided is sufficient to pay for the product. 
+It then vends the required change, if any, and reduces the quantity of that item in inventory and the returned change.
+The method returns a string appropriate to whatever has occurred. (ie. “Error, no item with code “E17”, “Error: Item is out of stock”, “Error: insufficient money provided”, “Please enjoy your ‘Jelly Beans’ and take your change of $0.60”).
+
+For example, in Inventory is the key-value pair {{“Chocolate-covered Beans”, 2, “A12”}, 3}. MoneyFloat has four $1 coins (ie. {1, 4}).
+VendItem(“A12”, {5}) represents entering the code “A12” and inserting a $5 bill into the machine.
+The machine reduces the value in the inventory for the product that has the key of A12, and returns three $1 coins.
+As a result, Inventory now has the key-value pair of { {“Chocolate-covered Beans, 2, “A12”}, 2} and MoneyFloat has the key-value pair of {1, 1}.

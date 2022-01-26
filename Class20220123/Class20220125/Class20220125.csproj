@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{26517C7D-73F5-4250-AB2F-36680B4E4FAC}</ProjectGuid>
+    <ProjectGuid>{DD24BAA2-69A3-47CA-95A9-FF087994E877}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Class20220124_3自动售货机</RootNamespace>
-    <AssemblyName>Class20220124-3自动售货机</AssemblyName>
+    <RootNamespace>Class20220125</RootNamespace>
+    <AssemblyName>Class20220125</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Other.cs" />
+    <Compile Include="Brand.cs" />
+    <Compile Include="Car.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Store.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

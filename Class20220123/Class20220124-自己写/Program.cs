@@ -25,6 +25,8 @@ namespace Class20220124_自己写
               更改学生班级，使学生只能同时拥有15个学分的课程
              */
 
+            Institute institute = new Institute("MITT");
+
             Student st1 = new Student("Mike");
             Student st2 = new Student("Chris");
             Student st3 = new Student("Chris");
@@ -34,8 +36,8 @@ namespace Class20220124_自己写
             Console.WriteLine(Student.NumOfStudentsInTheSystem);
             Student.PrintTotalNumOfStudents();
 
-            Course c1 = new Course("OOP", 1, 3);
-            Course c2 = new Course("Algorithms", 1, 6);
+            Course c1 = new Course("OOP", 1, 3,30);
+            Course c2 = new Course("Algorithms", 1, 6,20);
 
             st1.Nationality = "Canada";
             st1.Birthdate = new DateTime(1990, 1, 6);

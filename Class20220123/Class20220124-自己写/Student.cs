@@ -31,30 +31,50 @@ namespace Class20220124_自己写
         为每门课程添加最大容量。
         - Add a WaitingList for each course,
         为每门课程添加等候名单，
-            when a user is trying to join a full course,
-            当用户尝试加入已经满员的课程时，
-            they will be added to this waiting list,
-            他们将被添加到这个等候名单中，
-            once a user leaves a course that is full ,
-            一旦用户离开已满的课程，
-            The first user in the waiting list will be added to the course.
-            等候名单中的第一个用户将被添加到课程中。
+         when a user is trying to join a full course,
+         当用户尝试加入已经满员的课程时，
+         they will be added to this waiting list,
+         他们将被添加到这个等候名单中，
+         once a user leaves a course that is full ,
+         一旦用户离开已满的课程，
+         The first user in the waiting list will be added to the course.
+         等候名单中的第一个用户将被添加到课程中。
 
-            Create a new class "Institute", which contains a list of all courses, list of all students
-            创建一个新类“学院”，其中包含所有课程的列表，所有学生的列表
-            Write the following methods:编写以下方法：
-            - Get a list of all full courses- 获取所有完整课程的列表
-            - Get a list of all students with max allowed credits- 获取所有具有最大允许学分的学生的列表
-            - list of all students who are in 3 waitlists at least- 至少在 3 个候补名单中的所有学生名单
-            - The course with the max number of students- 学生人数最多的课程
-            - The course with max number of dropouts- 辍学人数最多的课程
+         @@周一做的
+         Create a new class "Institute", which contains a list of all courses, list of all students
+         创建一个新类“学院”，其中包含所有课程的列表，所有学生的列表
+         Write the following methods:编写以下方法：
+         - Get a list of all full courses- 获取所有完整课程的列表
+         - Get a list of all students with max allowed credits- 获取所有具有最大允许学分的学生的列表
+         - list of all students who are in 3 waitlists at least- 至少在 3 个候补名单中的所有学生名单
+         - The course with the max number of students- 学生人数最多的课程
+         - The course with max number of dropouts- 辍学人数最多的课程
 
-            Create a collection (list) in the course to represent the grades of students in this course
-            Create a collection in the student to represent the grades of this student in all his courses
-            - Write a function to get the top student in a course
-            - Write a function to get the best course (top grade) for a student
-            - Write a function to get the GPA (from 0 to 4) of a student
-            - Write a function to get the top student (top GPA)
+
+         @@周一做的
+         Create a collection (list) in the course to represent the grades of students in this course
+         在课程中创建一个集合（列表）来代表该课程中学生的成绩
+         Create a collection in the student to represent the grades of this student in all his courses
+         在学生中创建一个集合，以代表该学生在其所有课程中的成绩
+         - Write a function to get the top student in a course
+         编写一个函数来获得一门课程中的优等生
+         - Write a function to get the best course (top grade) for a student
+         编写一个函数来为学生获得最好的课程（最高分）
+         - Write a function to get the GPA (from 0 to 4) of a student
+         编写一个函数来获取学生的 GPA（从 0 到 4）
+         - Write a function to get the top student (top GPA)
+         编写一个函数来获得优等生（top GPA）
+
+
+         @@周二做的
+         * Add a property in the Student to indicate if the student is suspended.
+         * 在学生中添加一个属性，以表明学生是否被停学。
+         * Create a new exception (StudentSuspendedException)
+         * 创建一个新异常（StudentSuspendedException）
+         * Throw this exception if a suspended student is trying to register for a course.
+         * 如果被停学的学生试图注册课程，则抛出此异常。
+         * Catch the exception inside the Main method
+         * 在 Main 方法中捕获异常
 
          */
 
@@ -67,6 +87,9 @@ namespace Class20220124_自己写
         public static int NumOfStudentsInTheSystem;
 
         public int NumberOfEnrolledCredits;
+        public const int MAX_ALLOW_CREDIT = 15;//const静态常量，不会改变
+
+        public bool StudentIsSuspended;
 
         public Student(string name)
         {
@@ -83,8 +106,12 @@ namespace Class20220124_自己写
             NumberOfEnrolledCredits = 0;
         }
 
-        public void JoinCourse(Course courseToJoin)
+        public void JoinCourse(Course courseToJoin,Institute ins)
         {
+            if (courseToJoin == null || !ins.AllCourses.Contains(courseToJoin))
+            {
+                throw new CourseNotFoundExcpetion("The course doesn't exist...");
+            }
             if (courseToJoin.Students.Count >= courseToJoin.MaxCapacity)
             {
                 Console.WriteLine("Sorry the course is full, you will be added to the waiting list..");
@@ -141,6 +168,15 @@ namespace Class20220124_自己写
         public static void PrintTotalNumOfStudents()//static静态数据示例
         {
             Console.WriteLine($"The total number of students in the system are: {NumOfStudentsInTheSystem}");
+        }
+
+        public int NumOfEnrolledCredit()
+        {
+            int totalCredit = 0;
+            foreach(var course in Courses)
+            {
+                
+            }
         }
     }
 }

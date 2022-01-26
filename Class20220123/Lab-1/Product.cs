@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Class20220124VendingMachine
+namespace Lab_1
 {
     class Product
     {
@@ -12,13 +12,7 @@ namespace Class20220124VendingMachine
         public int Price;
         public string Code;
 
-        public Product(){}
-
-        public Product(string code)
-        {
-            this.Code = code;
-        }
-
+        public Product() { }
         public Product(string name, int price, string code)
         {
             this.Name = name;

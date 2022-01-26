@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{26517C7D-73F5-4250-AB2F-36680B4E4FAC}</ProjectGuid>
+    <ProjectGuid>{A3B8CB8B-94C4-4394-A561-944D53D3B939}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Class20220124_3自动售货机</RootNamespace>
-    <AssemblyName>Class20220124-3自动售货机</AssemblyName>
+    <RootNamespace>之前的作业</RootNamespace>
+    <AssemblyName>之前的作业</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Other.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
