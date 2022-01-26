@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Class20220125
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
@@ -26,14 +26,32 @@ namespace Class20220125
 
             //Store
             #endregion
-
+            /*
+             * 第一次（1-25）
+             a small car dealership wants to create a console app for their operations
+             一家小型汽车经销商想要为其运营创建控制台应用程序
+              -Create a class "Car", try to decide what are the properties of a car (no methods required) 
+              -创建一个“汽车”类，尝试确定汽车的属性（不需要方法）
+              -Create a class "Store" that has a list of all cars. 
+              - 创建一个包含所有汽车列表的“商店”类。
+              -we were toLd that the Brand" of a car is nore than a string, Create a class Brand" and decide what properties this class should have. 
+              -我们被告知汽车的品牌“不仅仅是一个字符串，创建一个类品牌”并决定这个类应该具有哪些属性。
+              -Create class Customer- 创建类客户
+              -In the Store class, write a nethod to sell a car to a custoner
+              在 Store 类中，编写一个将汽车卖给客户的方法
+              -In the Store class, write a method to get a list of all the sold cars.
+              在 Store 类中，编写一个方法来获取所有已售汽车的列表。
+              -In the Store class, write a method to get a list of all the sold cars in a nonth (pass the month and year as paraneters). 
+              在 Store 类中，编写一个方法来获取所有已售汽车的列表（将月份和年份作为参数传递）。
+             */
             Store store = new Store("Waverly Mazda");
 
-            Car car1 = new Car(134534534,"Mazda", 2020);
+            Car car1 = new Car(134534534, "Mazda", 2020);
             Car car2 = new Car(282634782, "Honda", 1990);
 
             store.AllCars.Add(car1);
             store.AllCars.Add(car2);
+
 
             Customer customer1 = new Customer("Mike", "mike@google.com");
             Customer customer2 = new Customer("Chris", "chris@yahoo.com");

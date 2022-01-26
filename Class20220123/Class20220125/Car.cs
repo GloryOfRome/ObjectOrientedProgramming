@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Class20220125
 {
-    class Car
+    internal class Car//本项目使用
     {
         public int Id;//Serial Num Vip
         public string Make;//构造，制作
@@ -22,7 +22,7 @@ namespace Class20220125
         public bool IsSold;
         public DateTime TimeOfSale;//生产日期   
         //public int CustomerId;//The Id of the customer who bought/will buy the car购买/将要购买这辆汽车的顾客的Id
-        public Customer customer;
+        public Customer Customer;
 
         public Car(int Id, string Make, int Year)
         {

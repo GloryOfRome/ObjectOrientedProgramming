@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Class20220125
 {
-    class Store//Database where we have everything数据库中有我们所有的东西
+    internal class Store//Database where we have everything数据库中有我们所有的东西
     {
         public string Name;
         public string Address;
@@ -15,7 +15,6 @@ namespace Class20220125
 
         public List<Car> AllCars;
         public List<Customer> AllCustomer;
-
         public Store(string name)
         {
             this.Name = name;
@@ -32,10 +31,11 @@ namespace Class20220125
             }
             car.IsSold = true;
             car.TimeOfSale = DateTime.Now;//表示“现在”已经卖掉了
-            car.customer = customer;
+            //car.Customer = customer.Id;
+            car.Customer = customer;
         }
 
-        public List<Car> GerAllSoldCars()//得到所有已售汽车信息
+        public List<Car> GetAllSoldCars()//得到所有已售汽车信息
         {
             List<Car> result = new List<Car>();
             foreach(var car in AllCars)

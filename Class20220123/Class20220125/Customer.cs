@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Class20220125
 {
-    class Customer
+    internal class Customer
     {
         public int Id;
         public string Name;
@@ -16,6 +16,7 @@ namespace Class20220125
 
         //Navigation property(not part of the database) 导航属性(不是数据库的一部分)
         public List<Car> car;
+
 
         public bool VIP;
         public int CreditScore;//信用评分
