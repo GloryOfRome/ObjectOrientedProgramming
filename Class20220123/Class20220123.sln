@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCarDealership", "Simp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class20220126", "Class20220126\Class20220126.csproj", "{75452BE4-505D-4613-BA8C-37F6A1508024}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment-Last", "..\..\..\算法与数据结构-SD-290-F21P1\Assignment-Last\Assignment-Last\Assignment-Last.csproj", "{27E04B98-4DB2-470B-8E92-F8B31AC3AADC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{75452BE4-505D-4613-BA8C-37F6A1508024}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75452BE4-505D-4613-BA8C-37F6A1508024}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75452BE4-505D-4613-BA8C-37F6A1508024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27E04B98-4DB2-470B-8E92-F8B31AC3AADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E04B98-4DB2-470B-8E92-F8B31AC3AADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E04B98-4DB2-470B-8E92-F8B31AC3AADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E04B98-4DB2-470B-8E92-F8B31AC3AADC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

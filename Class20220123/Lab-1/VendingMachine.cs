@@ -8,36 +8,53 @@ namespace Lab_1
 {
     class VendingMachine
     {
-        public int SerialNumber;
-        public Dictionary<int, int> MoneyFloat = new Dictionary<int, int>() {
-            {1,0 },
-            {2,0 },
-            {5,0 },
-            {10,0 },
-            {20,0 },
-            {50,0 },
-            {100,0 },
-        };
-        public Dictionary<Product, int> Inventory = new Dictionary<Product, int>();
+        public static int SerialNumber;
+        private Dictionary<int, int> MoneyFloat;
+        private Dictionary<Product, int> Inventory;
+
+        public readonly string Barcode;
+       
 
         public VendingMachine() { }
-        public VendingMachine(int serialNumber)
+        public VendingMachine(string barcode)
         {
-            this.SerialNumber = serialNumber;
+            SerialNumber++;
+            if (barcode == "")
+                throw new MyException4("Error: the Serial Number is empty, please modify");
+            else
+                this.Barcode = barcode;
+            MoneyFloat = new Dictionary<int, int>() { { 100, 0 }, { 50, 0 }, { 20, 0 }, { 10, 0 }, { 5, 0 }, { 2, 0 }, { 1, 0 } };
+            Inventory = new Dictionary<Product, int>();
         }
 
-        public void AA()
+        public void AA(Dictionary<int, int> MoneyFloat,int money)
         {
-            int tempVedingMachineMoney = 0;
-            foreach (var el in MoneyFloat)
+            int[] arr = new int[] { 100, 50, 20, 10, 5, 2, 1 };
+            for (int i=0; i < arr.Length; i++)
             {
-                tempVedingMachineMoney += el.Key * el.Value;
+                int intKey = arr[i];
+                int intValue = MoneyFloat[arr[i]];
+                while (intValue>0 && intKey <= money)
+                {
+                    int temp = money / intKey;
+                    Console.WriteLine($"{intKey}--{temp}");
+                    Console.WriteLine("-----------");
+                    intValue -= temp;
+                    Console.WriteLine($"{intValue}");
+                    money -= intValue * temp;
+                }
             }
-            Console.WriteLine($"Total： {tempVedingMachineMoney}");
+            foreach(var el in MoneyFloat)
+            {
+                Console.WriteLine($"{el.Key}--{el.Value}");
+            }
         }
 
         public string StockItem(Product product, int Quantity)
         {
+            if (Quantity < 0)
+                throw new MyException5("Error: VendingMachine.StockItem should not allow negative quantities, please modify");
+
             if (this.Inventory.ContainsKey(product))
                 this.Inventory[product] += Quantity;
             else
@@ -47,6 +64,9 @@ namespace Lab_1
 
         public string StockFloat(int MoneyDenomination, int Quantity)
         {
+            if (MoneyDenomination < 0 || Quantity<0)
+                throw new MyException5("Error: VendingMachine.StockFloat should not allow negative quantities, please modify");
+
             if (MoneyFloat.ContainsKey(MoneyDenomination))
                 MoneyFloat[MoneyDenomination] += Quantity;
             else
