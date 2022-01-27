@@ -16,16 +16,16 @@ namespace Lab_1
        
 
         public VendingMachine() { }
-        public VendingMachine(string barcode)
-        {
-            SerialNumber++;
-            if (barcode == "")
-                throw new MyException4("Error: the Serial Number is empty, please modify");
-            else
-                this.Barcode = barcode;
-            MoneyFloat = new Dictionary<int, int>() { { 100, 0 }, { 50, 0 }, { 20, 0 }, { 10, 0 }, { 5, 0 }, { 2, 0 }, { 1, 0 } };
-            Inventory = new Dictionary<Product, int>();
-        }
+            public VendingMachine(string barcode)
+            {
+                SerialNumber++;
+                if (barcode == "")
+                    throw new MyException4("Error: the Serial Number is empty, please modify");
+                else
+                    this.Barcode = barcode;
+                MoneyFloat = new Dictionary<int, int>() { { 100, 0 }, { 50, 0 }, { 20, 0 }, { 10, 0 }, { 5, 0 }, { 2, 0 }, { 1, 0 } };
+                Inventory = new Dictionary<Product, int>();
+            }
 
         public void AA(Dictionary<int, int> MoneyFloat,int money)
         {

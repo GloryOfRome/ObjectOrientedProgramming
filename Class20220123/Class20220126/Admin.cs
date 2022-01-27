@@ -9,6 +9,8 @@ namespace Class20220126
     class Admin : Staff//行政
     {
         public string Role;//HR,Admission....
+        public Admin() { }
+
         public Admin(string name, DateTime date, double salary):base(name, date, salary)
         {
             //因为是继承，所以里面的东西都可以省略

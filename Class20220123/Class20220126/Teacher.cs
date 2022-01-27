@@ -10,6 +10,8 @@ namespace Class20220126
     {
         public List<Course> Courses;
 
+        public Teacher() { }
+
         public Teacher(string name,DateTime date,double salary) : base(name, date, salary)
         {
             this.Courses = new List<Course>();
