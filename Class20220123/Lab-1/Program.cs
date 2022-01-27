@@ -28,7 +28,7 @@ namespace Lab_1
 
                 VendingMachine ve1 = new VendingMachine("60001");
                 ve1.StockItem(pro1, 2);
-                ve1.StockFloat(-20, 5);
+                ve1.StockFloat(-20, 5); 
             }
             catch (MyException e)
             {
