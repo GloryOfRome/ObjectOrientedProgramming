@@ -12,6 +12,6 @@ namespace Lab_4
         public int Capacity;
         public bool Occupied;
 
-        public List<Reservation> Reservations;
+        List<Reservation> Reservations;
     }
 }

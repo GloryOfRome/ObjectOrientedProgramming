@@ -11,6 +11,6 @@ namespace Lab_4
         public string Name;
         public int CreditCard;
 
-        public List<Reservation> Reservations;
+        List<Reservation> Reservations;
     }
 }

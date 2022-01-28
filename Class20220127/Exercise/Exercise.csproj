@@ -44,7 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Course.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="Diploma.cs" />
+    <Compile Include="DiplomaCourse.cs" />
     <Compile Include="Institute.cs" />
+    <Compile Include="InstituteTeacher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />

@@ -12,5 +12,6 @@ namespace Exercise
 
         //Relation关系
         public List<Course> Courses;//一个老师可以教很多课
+        public List<Institute> Institutes;
     }
 }
