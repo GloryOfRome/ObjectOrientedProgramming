@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CE6B3468-83BA-40CA-BC5A-3D588A908583}</ProjectGuid>
+    <ProjectGuid>{23698654-AF59-41CE-80E5-AE1934AC0B72}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Exercise</RootNamespace>
-    <AssemblyName>Exercise</AssemblyName>
+    <RootNamespace>Lab_4</RootNamespace>
+    <AssemblyName>Lab 4</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Course.cs" />
-    <Compile Include="Institute.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Hotel.cs" />
+    <Compile Include="PremiumRoom.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="StudentCourse.cs" />
-    <Compile Include="Teacher.cs" />
+    <Compile Include="Reservation.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="VIPClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
