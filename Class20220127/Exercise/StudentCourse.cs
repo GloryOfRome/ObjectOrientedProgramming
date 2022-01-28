@@ -13,7 +13,7 @@ namespace Exercise
         public Course Course;
 
         //同时存在于Student和Course之间
-        public int Grade;//年级
+        public int Grade;//成绩
         public bool IsReturnStudent;//是返校生
         public DateTime EnrollmentDate;//注册日期
 

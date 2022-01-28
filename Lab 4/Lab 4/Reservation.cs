@@ -14,6 +14,6 @@ namespace Lab_4
 
         public Client client;
         public Room room;
-        public List<Reservation> Reservations;
+        
     }
 }
