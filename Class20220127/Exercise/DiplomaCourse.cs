@@ -13,5 +13,13 @@ namespace Exercise
 
         public bool IsOptional;//是选修课
         public int NumOfCredits;//学分数
+
+        public DiplomaCourse(Diploma d, Course c, bool optional, int credits)
+        {
+            Diploma = d;
+            Course = c;
+            IsOptional = optional;
+            NumOfCredits = credits;
+        }
     }
 }

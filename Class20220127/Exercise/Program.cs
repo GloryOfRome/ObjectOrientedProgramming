@@ -30,7 +30,50 @@ namespace Exercise
             Diploma SoftwarDeveloper = new Diploma(IT);//重写重写构造函数后需要添加参数
             IT.Diplomas.Add(SoftwarDeveloper);
 
-            Student st1 = new Student();
+            Student st1 = new Student(SoftwarDeveloper);//重写重写构造函数后需要添加参数
+            Student st2 = new Student(SoftwarDeveloper);//重写重写构造函数后需要添加参数
+
+            SoftwarDeveloper.Students.Add(st1);
+            SoftwarDeveloper.Students.Add(st2);
+
+            Course oop = new Course();//面向对象
+
+            //We want to Link oop with software developer program 
+            //我们想与软件开发程序链接oop
+            DiplomaCourse oopInSoftwarDeveloper = new DiplomaCourse(SoftwarDeveloper, oop, false, 3);//重写构造函数后效果与下面的一样
+            //oopInSoftwarDeveloper.Course = oop;//课程
+            //oopInSoftwarDeveloper.Diploma = SoftwarDeveloper;//专业
+            //oopInSoftwarDeveloper.IsOptional = false;
+            //oopInSoftwarDeveloper.NumOfCredits = 3;
+
+            Course creativeWriting = new Course();//创意写作
+
+            DiplomaCourse cwInSoftwarDeveloper = new DiplomaCourse(SoftwarDeveloper, creativeWriting, true,1);
+            //cwInSoftwarDeveloper.Course = creativeWriting;
+            //cwInSoftwarDeveloper.Diploma = SoftwarDeveloper;
+            //cwInSoftwarDeveloper.IsOptional = true;
+            //cwInSoftwarDeveloper.NumOfCredits = 1;
+
+            SoftwarDeveloper.DiplomaCourses.Add(oopInSoftwarDeveloper);
+            SoftwarDeveloper.DiplomaCourses.Add(cwInSoftwarDeveloper);
+
+            oop.DiplomaCourses.Add(oopInSoftwarDeveloper);
+
+            creativeWriting.DiplomaCourses.Add(cwInSoftwarDeveloper);
+
+            //Write a method that gets alt the optional courses in a diploma
+            ////编写一个方法来替换文凭中的选修课
+        }
+        public List<string> GetAllOptionalCoursesInADiploma(Diploma diploma)
+        {
+            List<string> optionalCourses = new List<string>();
+            foreach (var diplomaCourse in diploma.DiplomaCourses)
+            {
+                if (diplomaCourse.IsOptional)
+                    optionalCourses.Add(diplomaCourse.Course.Name);
+            }
+
+            return optionalCourses;
         }
     }
 }
