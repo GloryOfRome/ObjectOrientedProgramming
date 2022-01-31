@@ -8,8 +8,8 @@ namespace Class20220128_Project
 {
     public enum MenuType
     {
-        Main,//主要的
-        Fight//斗争
+        Main,
+        Fight
     }
 
     class Game
@@ -31,8 +31,8 @@ namespace Class20220128_Project
 
             Hero hero = new Hero(name, heroStrength, heroDefense, health);
             Hero = hero;
-            WeaponsInBag(weapons);//装满英雄武器包
-            ArmorsInBag(armors);//填充英雄盔甲包
+            WeaponsInBag(weapons);
+            ArmorsInBag(armors);
 
             int selection = GetMenuSelection(MenuType.Main);
             while (selection != 4)
@@ -68,7 +68,7 @@ namespace Class20220128_Project
             switch (selection)
             {
                 case 1:
-                    RandomCurrentMonster();//设置随机当前怪物
+                    RandomCurrentMonster();
                     break;
                 case 2:
                     StrongestMonster(Monsters);
@@ -129,7 +129,7 @@ namespace Class20220128_Project
             }
             else
             {
-                ShowMainMenu();//显示主菜单
+                ShowMainMenu();
                 selectionOptions = new HashSet<int>() { 1, 2, 3, 4 };
             }
 

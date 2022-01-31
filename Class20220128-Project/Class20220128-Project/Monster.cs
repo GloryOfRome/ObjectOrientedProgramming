@@ -9,10 +9,10 @@ namespace Class20220128_Project
     class Monster
     {
         public string Name { get; set; }
-        public int Strength { get; set; }//基础力量
-        public int Defense { get; set; }//基础防御
-        public int OriginalHealth { get; set; }//原始健康（生命值）
-        public int CurrentHealth { get; set; }//当前健康
+        public int Strength { get; set; }
+        public int Defense { get; set; }
+        public int OriginalHealth { get; set; }
+        public int CurrentHealth { get; set; }
 
         public Monster(string name, int strength, int defense, int originalHealth)
         {

@@ -9,15 +9,15 @@ namespace Class20220128_Project
     class Hero
     {
         public string Name { get; set; }
-        public int Strength { get; set; }//基础力量
-        public int Defense { get; set; }//基础防御
-        public int OriginalHealth { get; set; }//原始健康（生命值）
-        public int CurrentHealth { get; set; }//当前健康
-        public int Coins { get; set; }//硬币
-        public Weapon EquippedWeapon { get; set; }//装备武器
-        public Armor EquippedArmor { get; set; }//装备盔甲
-        public List<Weapon> WeaponsBag { get; set; }//武器包
-        public List<Armor> ArmorsBag { get; set; }//盔甲包
+        public int Strength { get; set; }
+        public int Defense { get; set; }
+        public int OriginalHealth { get; set; }
+        public int CurrentHealth { get; set; }
+        public int Coins { get; set; }
+        public Weapon EquippedWeapon { get; set; }
+        public Armor EquippedArmor { get; set; }
+        public List<Weapon> WeaponsBag { get; set; }
+        public List<Armor> ArmorsBag { get; set; }
         public List<Fight> RandomMonsterFights { get; set; }
         public List<Fight> StrongestMonsterFights { get; set; }
 
@@ -33,14 +33,14 @@ namespace Class20220128_Project
             this.StrongestMonsterFights = new List<Fight>();
         }
 
-        public void ShowStats()//显示数据
+        public void ShowStats()
         {
             Console.WriteLine($"The hero {Name}, get Coins {Coins} pie");
             Console.WriteLine("Press enter to return to main menu.");
             Console.ReadLine();
         }
 
-        public void ShowInventory()//显示库存
+        public void ShowInventory()
         {
             Console.WriteLine($"Inventory of hero {Name}:");
             Console.WriteLine("Weapons:");
@@ -57,7 +57,7 @@ namespace Class20220128_Project
             Console.ReadLine();
         }
 
-        public void EquipWeapon()//装备武器
+        public void EquipWeapon()
         {
             Random r = new Random();
             int randomNum = r.Next(0, WeaponsBag.Count);

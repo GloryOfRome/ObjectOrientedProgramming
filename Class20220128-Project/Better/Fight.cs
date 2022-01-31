@@ -42,6 +42,7 @@ namespace Better
             Console.WriteLine("Press enter to return to main menu.");
             Console.ReadLine();
         }
+
         public void HeroTurn()
         {
             Hero.EquipWeapon();
@@ -85,6 +86,7 @@ namespace Better
                 Console.WriteLine($"{Monster.Name} lost no health points.");
             }
         }
+
         public void MonsterTurn()
         {
             Hero.EquipArmor();
@@ -124,6 +126,8 @@ namespace Better
                 Console.WriteLine($"{Hero.Name} lost no health points.");
             }
         }
+
+
         public void Win()
         {
             Winner = PlayerType.Hero;

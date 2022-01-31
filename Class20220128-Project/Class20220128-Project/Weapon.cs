@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Class20220128_Project
 {
-    class Weapon//武器
+    class Weapon
     {
 
         public string Name { get; set; }
-        public int Power { get; set; }//力量
+        public int Power { get; set; }
 
         public Weapon(string name, int power)
         {

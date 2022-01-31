@@ -27,7 +27,6 @@ namespace Class20220128_Project
         public void StartFight()
         {
             Console.WriteLine("Let's Go.");
-            Console.WriteLine($"{Hero.Name} is first.");
             Console.WriteLine("Press enter to begin.");
             Console.ReadLine();
 
@@ -74,10 +73,6 @@ namespace Class20220128_Project
                     Lose();
                 }
             }
-            else
-            {
-                Console.WriteLine($"{Hero.Name} lost no health points.");
-            }
         }
 
         public void HeroTurn()
@@ -89,7 +84,7 @@ namespace Class20220128_Project
 
             if (Hero.EquippedWeapon.Power + Hero.Strength > Monster.Defense)
             {
-                int healthLost = Hero.EquippedWeapon.Power + Hero.Strength - Monster.Defense;
+                int healthLost = Hero.EquippedWeapon.Power + Hero.Strength;
 
                 Monster.CurrentHealth -= healthLost;
                 Console.WriteLine($"{Monster.Name} lost {healthLost} health points.");
@@ -99,12 +94,10 @@ namespace Class20220128_Project
                 }
 
             }
-            else
-            {
-
-            }
 
         }
+
+
 
         public void Win()
         {
